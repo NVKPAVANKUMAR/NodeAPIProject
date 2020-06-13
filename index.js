@@ -23,6 +23,6 @@ app.get('/api/users/:id', (req, res) => {
     }
 });
 
-app.listen(PORT = 5000, () => {
+app.listen(PORT =  process.env.PORT || 5000, () => {
     console.log('Server is started, please call API Port no - ', PORT);
 });

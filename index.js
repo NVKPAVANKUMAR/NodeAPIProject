@@ -6,7 +6,7 @@ app.get('/api/users', (req, res) => {
     res.send(dataFile);
 })
 
-app.get('/api/info', (res) => {
+app.get('/api/info', (req,res) => {
     res.send("Welcome to Nodejs API..!");
 });
 

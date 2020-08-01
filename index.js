@@ -2,6 +2,11 @@ const express = require("express");
 let dataFile = require('./users.json');
 const app = express();
 
+
+app.get('/',(req,res) =>{
+    res.send("Hello Node-Express!")
+})
+
 app.get('/api/users', (req, res) => {
     res.send(dataFile);
 })

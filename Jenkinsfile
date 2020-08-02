@@ -2,14 +2,14 @@ node {
     def commit_id
     stage('preparation') {
         checkout scm
-        cmd "git rev-parse --short HEAD > .git/commit-id"
+        bat "git rev-parse --short HEAD > .git/commit-id"
         commit_id = readFile('.git/commit-id').trim()
     }
 
     stage('test') {
         nodejs(nodeJSInstallationName: 'nodejs') {
-            cmd 'npm install'
-            cmd 'npm test'
+            bat 'npm install'
+            bat 'npm test'
         }
     }
 

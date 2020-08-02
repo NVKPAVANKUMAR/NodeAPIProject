@@ -14,8 +14,8 @@ node {
     }
 
     stage('docker bulid/push') {
-        docker.withRegistry('https://index.docker.io/v1/', 'Docker') {
-            def app = docker.build('nvkpavankumar/docker-nodejs:${commit_id}','.').push()
-        }
+        docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
+        def app = docker.build("nvkpavankumar/docker-nodejs-demo:${commit_id}", '.').push()
+     }
     }
 }

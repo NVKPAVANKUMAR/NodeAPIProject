@@ -7,7 +7,7 @@ node {
     }
 
     stage('test') {
-        nodejs(nodeJSInstallationName: 'nodejs') {
+        nodejs(nodeJSInstallationName: 'Nodejs') {
             bat 'npm install'
             bat 'npm test'
         }

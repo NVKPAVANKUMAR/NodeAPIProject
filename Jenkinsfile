@@ -5,9 +5,9 @@ node {
      bat "git rev-parse --short HEAD > .git/commit-id"
      commit_id = readFile('.git/commit-id').trim()
    }
-   
+
    stage('test') {
-     def myTestContainer = docker.image('node:4.6')
+     def myTestContainer = docker.image('node:12.x')
      myTestContainer.pull()
      myTestContainer.inside {
        bat 'npm install --only=dev'
@@ -17,7 +17,7 @@ node {
 
    stage('test with a DB') {
      def mysql = docker.image('mysql').run("-e MYSQL_ALLOW_EMPTY_PASSWORD=yes") 
-     def myTestContainer = docker.image('node:4.6')
+     def myTestContainer = docker.image('node:12.x')
      myTestContainer.pull()
      myTestContainer.inside("--link ${mysql.id}:mysql") { // using linking, mysql will be available at host: mysql, port: 3306
           sh 'npm install --only=dev' 

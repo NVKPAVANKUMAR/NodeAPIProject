@@ -9,7 +9,7 @@
     "test": "npm install inherits && mocha"
   },
   "engines": {
-    "node": "12.x"
+    "node": "^4.6.1"
   },
   "keywords": [],
   "author": "",

@@ -5,6 +5,7 @@ node {
      bat "git rev-parse --short HEAD > .git/commit-id"
      commit_id = readFile('.git/commit-id').trim()
    }
+   
    stage('test') {
      def myTestContainer = docker.image('node:4.6')
      myTestContainer.pull()
@@ -13,6 +14,7 @@ node {
        bat 'npm test'
      }
    }
+
    stage('test with a DB') {
      def mysql = docker.image('mysql').run("-e MYSQL_ALLOW_EMPTY_PASSWORD=yes") 
      def myTestContainer = docker.image('node:4.6')

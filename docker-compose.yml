@@ -1,6 +1,8 @@
-web:
+version: "2"
+services:
+  web:
     build: .
+    container_name: nodejs-api
     command: node index.js
     ports:
-        - "5000:5000"
-        
+      - "5000:5000"

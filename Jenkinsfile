@@ -8,6 +8,7 @@ node {
 
    stage('test') {
      def myTestContainer = docker.image('node:12.18')
+     args '-v ${PWD}:/appjs -w appjs'
      myTestContainer.pull()
      myTestContainer.inside {
        bat 'npm install --only=dev'

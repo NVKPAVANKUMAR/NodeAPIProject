@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "inherits": "^2.0.4",
-    "mocha": "^8.1.0",
+    "mocha": "^8.4.0",
     "ms": "^2.1.1"
   }
 }
